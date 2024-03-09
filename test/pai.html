@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * { padding: 0; margin: 0; }
     th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
     th { background-color: #f2f2f2; }
   </style>
 </head>
 <body>
-<div style="display: flex; flex-direction: row; gap: 20px;"></div>
+<div style="display: flex; flex-direction: row; gap: 5px; flex-wrap: wrap;"></div>
 <table id="studentTable" border-collapse="collapse" width="100%"><thead><tr><th>No</th><th>Name</th><th>Class</th><th>Point</th><th>Score</th></tr></thead><tbody id="tableBody"></tbody></table>
 <script>
   document.title = window.location.href.split("/").pop().split(".").shift();
@@ -21,6 +22,7 @@
     const link = document.createElement("a");
     link.href = `./${subject.toLowerCase()}`
     link.textContent = subject;
+    if (document.title.toLocaleLowerCase() == subject.toLocaleLowerCase()) link.style.background = "black"
     document.getElementsByTagName("div")[0].appendChild(link);
   })
   const dataRaw = `
