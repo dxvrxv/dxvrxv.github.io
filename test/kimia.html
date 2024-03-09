@@ -19,7 +19,7 @@
     .catch(error => console.error('Error fetching raw data:', error));
   ["Kimia", "Inggris", "Biologi", "PKN", "MTK", "Bahasa", "Fisika", "Agama"].forEach((subject) => {
     const link = document.createElement("a");
-    link.href = `./${subject.toLowerCase()}`
+    link.href = `./${subject.toLowerCase()}.html`
     link.textContent = subject;
     document.getElementsByTagName("div")[0].appendChild(link);
   })
